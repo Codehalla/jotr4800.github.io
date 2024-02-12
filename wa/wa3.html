@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fork Bomb</title>
+</head>
+<body>
+    <nav>
+        <b>Contents</b>
+        <ol>
+            <li>(Top)</li>
+            <li>History</li>
+            <li>Implementation</li>
+            <li>Prevention</li>
+            <li>See also</li>
+            <li>References</li>
+            <li>External links</li> 
+        </ol>
+    </nav>
+
+    <img src="../img/fork-bomb.png" alt="fork bomb">
+    <p>In computing, a fork bomb (also called rabbit virus or wabbit[1]) is a denial-of-service (DoS) attack wherein a process continually replicates itself to deplete available system resources, slowing down or crashing the system due to resource starvation.</p>
+    <img src="../img/rabbit_virus.jpeg" alt="rabbit virus">
+
+    <section>
+        <h2>History</h2>
+        <p>Around 1978, an early variant of a fork bomb called wabbit was reported to run on a System/360. It may have descended from a similar attack called RABBITS reported from 1969 on a Burroughs 5500 at the University of Washington.[1]</p>
+    </section>
+
+    <section>
+        <h2>Implementation</h2>
+        <p>Fork bombs operate both by consuming CPU time in the process of forking, and by saturating the operating system's process table.[2][3] A basic implementation of a fork bomb is an infinite loop that repeatedly launches new copies of itself.</p>
+        <p>In Unix-like operating systems, fork bombs are generally written to use the fork system call.[3] As forked processes are also copies of the first program, once they resume execution from the next address at the frame pointer, they continue forking endlessly within their own copy of the same infinite loop; this has the effect of causing an exponential growth in processes. As modern Unix systems generally use a copy-on-write resource management technique when forking new processes,[4] a fork bomb generally will not saturate such a system's memory.</p>
+        <section>
+            <h3>Windows</h3>
+            <p>Microsoft Windows operating systems do not have an equivalent functionality to the Unix fork system call;[5] a fork bomb on such an operating system must therefore create a new process instead of forking from an existing one.</p>
+        </section>
+        <section>
+            <h3>Unix</h3>
+            <p>A classic example of a fork bomb is one written in Unix shell :(){ :|:& };:, possibly dating back to 1999,[6] which can be more easily understood as</p>
+            <code>
+                fork() {
+                    fork | fork &
+                }
+                fork
+            </code>
+        </section>
+        <p>In it, a function is defined (fork()) as calling itself (fork), then piping (|) its result into itself, all in a background job (&).</p>
+        <p>The code using a colon : as the function name is not valid in a shell as defined by POSIX, which only permits alphanumeric characters and underscores in function names.[7] However, its usage is allowed in GNU Bash as an extension.[8]</p>
+    </section>
+    <section>
+        <h2>Prevention</h2>
+        <p>As a fork bomb's mode of operation is entirely encapsulated by creating new processes, one way of preventing a fork bomb from severely affecting the entire system is to limit the maximum number of processes that a single user may own. On Linux, this can be achieved by using the ulimit utility; for example, the command ulimit -u 30 would limit the affected user to a maximum of thirty owned processes.[9] On PAM-enabled systems, this limit can also be set in /etc/security/limits.conf,[10] and on *BSD, the system administrator can put limits in /etc/login.conf.[11] Modern Linux systems also allow finer-grained fork bomb prevention through cgroups and process number (PID) controllers.[12] </p>
+    </section>
+
+    <section>
+        <h2>See also</h2>
+        <ul>
+            <li><a href="https://alexismuniz.me/wa/wa3">Artemis 2</a></li>
+            <li><a href="https://jamessmith-2.github.io/wa/wa3.html">James Webb Space Telescope</a></li>
+            <li><a href="https://ethancuenca.github.io/wa/wa3/wa3.html">Unity Game Engine</a></li>
+            <li><a href="https://sophietluu.github.io/wa/wa3.html">Minecraft</a></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>References</h2>
+    </section>
+
+    <section>
+        <h2>External Links</h2>
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/Deadlock">Deadlock</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Logic_bomb">Logic bomb</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Time_bomb_(software)">Time bomb (software)</a></li>
+        </ul>
+    </section>
+</body>
+</html>
