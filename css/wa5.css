@@ -10,28 +10,6 @@ html {
   background-color: #ccc;
 }
 
-h2 {
-  font-size: 20px;
-  padding: 10px;
-}
-
-h2, p {
-  margin: 0;
-}
-
-article {
-  height: 7.5em;
-  background-color: rgba(0,0,0,0.5);
-}
-
-article p {
-  padding: 5px;
-}
-
-footer[p] {
-  font-size: 15px;
-}
-
 .card {
   width: 35em;
   height: 22em;
@@ -56,7 +34,38 @@ footer[p] {
   float: right;
 }
 
-.card header, footer {
-  height: 50px;
-  padding: 10px;
+/* Rule 1 */
+.card header, .card footer {
+  height: 3em;
+  padding: 1em;
+}
+
+/* Rule 2 */
+h2, p {
+  margin: 0;
+}
+
+/* Rule 3 */
+article {
+  height: 12em;
+  background-color: rgba(0,0,0,0.5);
+}
+
+/* Rule 4 */
+.card header h2 {
+  font-size: 2em;
+  line-height: 1.5em;
+}
+
+/* Rule 5 */
+.card footer p {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+/* Rule 6 */
+article p {
+  padding: 1.5em;
+  padding-left: 1em;
+  color: #f0f0f0;
 }
