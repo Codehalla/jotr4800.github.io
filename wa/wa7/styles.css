@@ -3,83 +3,101 @@ body {
     color: #333;
     margin: 0;
     font: 1.2em / 1.2 Arial, Helvetica, sans-serif;
-  }
+}
 
-  img {
-      max-width: 100%;
-      display: block;
-  }
-  
-  .logo {
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.logo {
     font-size: 200%;
     padding: 50px 20px;
     margin: 0 auto;
     max-width: 980px;
-  }
-  
-  .grid {
+}
+
+.grid {
     margin: 0 auto;
     padding: 0 20px;
     max-width: 980px;
+}
 
-    display: flex;
-    display: row;
-  }
-
-  article img {
-    float: left;
-    margin: 0 20px 20px 0;
-  }
-
-  article p {
-    margin-right: 20px;
-  }
-  
-  nav {
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
+nav {
     background-color: #000;
     padding: .5em;
-  }
-  
-  nav ul {
+}
+
+nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    display: flex;
-    justify-content: space-between
-  }
-  
-  nav a {
+}
+
+nav a {
     color: #fff;
     text-decoration: none;
     padding: .5em 1em;
-  }
-  
-  .photos {
+}
+
+.photos {
     list-style: none;
     margin: 0;
     padding: 0;
-  }
+}
 
-  .feature {
-      width: 200px;
-  }
+.feature {
+    width: 200px;
+}
 
-  @media screen and (max-width: 500px) {
+@media screen and (min-width: 500px) {
+    nav {
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+    }
+    
+    nav ul {
+        display: flex;
+        justify-content: space-between
+    }
+
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    article img {
+        float: left;
+        margin: 0 20px 20px 0;
+    }
+
+    article p {
+        margin-right: 20px;
+    }
+    
+    article {
+        flex: 1 0 75%;
+    }
+    
+    aside {
+        flex: 1 0 25%;
+    }
+
     .photos {
-      display: flex;
-      flex-wrap: wrap;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .photos li {
-      width: 49%;
-      padding-bottom: 1px;
-      padding-left: 1px;
+        width: 49%;
+        padding-bottom: 1px;
+        padding-left: 1px;
     }
-  
-    .photos ul {
-      padding: 1px;
+}
+
+@media screen and (max-width: 499px) {
+    .photos li {
+        padding-bottom: 10px;
     }
-  }
+}
