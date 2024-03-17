@@ -79,7 +79,7 @@ p {
     width: 90%;
     margin: 5%;
 
-    box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    box-shadow: 0 0 50px rgba(0,0,0,0.7);
 }
 
 .second-set img {
@@ -103,7 +103,7 @@ p {
     top: 0;
     left: 0;
     z-index: 3;
-    color: white;
+    color: #f0f0f0;
     
     text-align: center;
     margin-left: 5%;
@@ -117,7 +117,7 @@ p {
     display: flex;
     flex-direction: column;
     margin: 0 3% 2% 3%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
     overflow: hidden;
 }
 
@@ -141,8 +141,6 @@ p {
 }
 
 .card-description {
-    content: "";
-    position: absolute;
     top: 0;
     width: 75%;
     height: 100%;
@@ -157,7 +155,7 @@ p {
 .card-footer {
     position: relative;
     z-index: 1;
-    background-color: #f0f0f0;
+    background-color: white;
 
     display: flex;
     flex-direction: column;
@@ -197,6 +195,10 @@ h3 {
     margin-bottom: 0;
 }
 
+.mission-statement {
+    margin-top: 3%;
+}
+
 /* Mobile screens */
 @media only screen and (max-width: 400px) {
     h1 {
@@ -205,6 +207,14 @@ h3 {
     
     h2 {
         font-size: 25px;
+    }
+
+    p {
+        
+    }
+
+    .card-main {
+        padding: 0;
     }
 
     .content-container .center-content {
@@ -217,19 +227,49 @@ h3 {
     }
 
     .card-description {
-        width: 90%;
+        width: 100%;
     }
 
     .p-wrapper {
         flex: none;
     }
-    
+
+    .footer-section h3 {
+        margin-bottom: 5%;
+    }
+
+    .card-description section p {
+        padding-right: 5%;
+    }
 }
 
 /* Laptop screens */
-@media only screen and (min-width: 401px) and (max-width: 1500px) {
+@media only screen and (min-width: 401px) and (max-width: 600px) {
     .content-container .center-content {
         margin-top: 25%;
+        margin-bottom: 5%;
+    }
+
+    .card-main {
+        padding: 20px;
+    }
+
+    .card-description {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1500px) {
+    .content-container .center-content {
+        margin-top: 25%;
+        margin-bottom: 5%;
+    }
+}
+
+/* Ultrawide screens */
+@media only screen and (min-width: 1501px) {
+    .content-container .center-content {
+        margin-top: 10%;
         margin-bottom: 5%;
     }
 }
