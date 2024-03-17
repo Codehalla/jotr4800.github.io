@@ -37,6 +37,8 @@ p {
     font-weight: 400;
     margin-left: 5%;
     margin-right: 5%;
+
+    line-height: 1.5;
 }
 
 .container {
@@ -71,6 +73,10 @@ p {
 .first-set {
     z-index: 1; /* For the first set */
     height: 100%;
+}
+
+.first-set .bottom {
+    box-shadow: 0 0 50px rgba(0,0,0,0.7);
 }
 
 .second-set {
@@ -199,6 +205,11 @@ h3 {
     margin-top: 3%;
 }
 
+footer {
+    text-align: center;
+    margin-top: 5%;
+}
+
 /* Mobile screens */
 @media only screen and (max-width: 400px) {
     h1 {
@@ -208,11 +219,7 @@ h3 {
     h2 {
         font-size: 25px;
     }
-
-    p {
-        
-    }
-
+    
     .card-main {
         padding: 0;
     }
@@ -259,7 +266,18 @@ h3 {
     }
 }
 
-@media only screen and (min-width: 601px) and (max-width: 1500px) {
+@media only screen and (min-width: 601px) and (max-width: 750px) {
+    .content-container .center-content {
+        margin-top: 25%;
+        margin-bottom: 5%;
+    }
+    
+    .card-description {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 751px) and (max-width: 1500px) {
     .content-container .center-content {
         margin-top: 25%;
         margin-bottom: 5%;
@@ -271,5 +289,25 @@ h3 {
     .content-container .center-content {
         margin-top: 10%;
         margin-bottom: 5%;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    h2 {
+        font-size: 30px;    
+    }
+
+    h3 {
+        font-size: 23px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 18px;
     }
 }
