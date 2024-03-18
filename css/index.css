@@ -233,8 +233,7 @@ footer {
     }
 
     .content-container .center-content {
-        margin-top: 70%;
-        margin-bottom: 5%;
+        margin: 5%;
     }
 
     .card-footer section {
@@ -266,8 +265,28 @@ footer {
 
 /* Laptop screens */
 @media only screen and (min-width: 401px) and (max-width: 600px) {
+    h1 {
+        font-size: 30px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    h4 {
+        font-size: 13px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
     .content-container .center-content {
-        margin-top: 25%;
+        margin-top: 5%;
         margin-bottom: 5%;
     }
 
@@ -277,6 +296,16 @@ footer {
 
     .card-description {
         width: 95%;
+    }
+
+    .footer-section {
+        flex: none;
+        text-align: left;
+    }
+
+    .p-wrapper {
+        flex: none;
+        justify-content: left;
     }
 }
 
