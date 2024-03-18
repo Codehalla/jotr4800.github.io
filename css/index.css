@@ -75,10 +75,6 @@ p {
     height: 100%;
 }
 
-.first-set .bottom {
-    box-shadow: 0 0 50px rgba(0,0,0,0.7);
-}
-
 .second-set {
     z-index: 2; /* For the second set */
     height: 100%;
@@ -109,7 +105,7 @@ p {
     top: 0;
     left: 0;
     z-index: 3;
-    color: #f0f0f0;
+    color: white;
     
     text-align: center;
     margin-left: 5%;
@@ -213,11 +209,23 @@ footer {
 /* Mobile screens */
 @media only screen and (max-width: 400px) {
     h1 {
-        font-size: 35px;
+        font-size: 20px;
     }
     
     h2 {
-        font-size: 25px;
+        font-size: 15px;
+    }
+
+    h3 {
+        font-size: 12px;
+    }
+
+    h4 {
+        font-size: 13px;
+    }
+
+    p {
+        font-size: 12px;
     }
     
     .card-main {
@@ -237,8 +245,14 @@ footer {
         width: 100%;
     }
 
+    .footer-section {
+        flex: none;
+        text-align: left;
+    }
+
     .p-wrapper {
         flex: none;
+        justify-content: left;
     }
 
     .footer-section h3 {
