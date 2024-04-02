@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Silly story generator</title>
+
+    <style>
+      body {
+        font-family: helvetica, sans-serif;
+        width: 1005;
+        background-image: url("../img/hogwarts.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: wheat;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      div {
+        padding-bottom: 20px;
+      }
+
+      input[type="text"] {
+        padding: 5px;
+        width: 150px;
+        background-color: wheat;
+        color: black;
+      }
+
+      p {
+        background: #000d4d;
+        color: white;
+        padding: 10px;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <label for="customname">Enter custom name:</label>
+      <input id="customname" type="text" placeholder="" />
+    </div>
+    <div>
+      <button class="randomize">Generate random story</button>
+    </div>
+    <p class="story"></p>
+
+    <script src="../js/wa10.js"></script>
+  </body>
+</html>
